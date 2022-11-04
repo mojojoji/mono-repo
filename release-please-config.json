@@ -1,4 +1,5 @@
 {
+    "plugins": ["node-workspace"],
     "packages": {
       "./repo1": {
         "release-type": "node"
