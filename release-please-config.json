@@ -1,6 +1,10 @@
 {
     "packages": {
-      "repo1": {},
-      "repo2": {}
+      "repo1": {
+        "release-type": "node"
+      },
+      "repo2": {
+        "release-type": "node"
+      }
     }
   }
