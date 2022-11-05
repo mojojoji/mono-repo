@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Tag to release'
+        required: true
+        type: string
+
+name: release-repo2
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test-repo2
+        run: |
+          echo "Test Repo 2"

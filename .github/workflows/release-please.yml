@@ -12,3 +12,14 @@ jobs:
           command: manifest
           release-type: node
           package-name: release-please-action
+
+      - uses: mojojoji/monorepo/.github/workflows/release-repo1.yml@main
+        if: ${{ steps.release.outputs['repo1--release_created'] }}
+        with:
+          tag: ${{ steps.release.outputs.repo1--tag_name }}
+
+
+      - uses: mojojoji/monorepo/.github/workflows/release-repo2.yml@main
+        if: ${{ steps.release.outputs['repo2--release_created'] }}
+        with:
+          tag: ${{ steps.release.outputs.repo2--tag_name }}
