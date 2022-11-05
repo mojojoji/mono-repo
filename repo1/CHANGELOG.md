@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/mojojoji/mono-repo/compare/repo1-v1.0.9...repo1-v1.0.10) (2022-11-05)
+
+
+### Bug Fixes
+
+* test ([6af25bf](https://github.com/mojojoji/mono-repo/commit/6af25bfa9946b3ed62ff5d872fa6a11ac479c99f))
+
 ## [1.0.9](https://github.com/mojojoji/mono-repo/compare/repo1-v1.0.8...repo1-v1.0.9) (2022-11-05)
 
 
