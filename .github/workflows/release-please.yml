@@ -7,7 +7,10 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      release_outputs: ${{ steps.release.outputs }}
+      repo1_release_created: ${{ steps.release.outputs['repo1--release_created']}}
+      repo1_tag: ${{ steps.release.outputs['repo1--tag_name']}}
+      repo2_release_created: ${{ steps.release.outputs['repo2--release_created']}}
+      repo2_tag: ${{ steps.release.outputs['repo2--tag_name']}}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -18,14 +21,14 @@ jobs:
           
   repo1-release:
     needs: release-please
-    if: ${{ needs.release-please.release_outputs['repo1--release_created'] }}
+    if: ${{ needs.release-please.repo1_release_created }}
     uses: mojojoji/mono-repo/.github/workflows/release-repo1.yml@main
     with:
       tag: ${{ needs.release-please.release_outputs.repo1--tag_name }}
 
   repo2-release:
     needs: release-please
-    if: ${{ needs.release-please.release_outputs['repo2--release_created'] }}
+    if: ${{ needs.release-please.repo2_release_created }}
     uses: mojojoji/mono-repo/.github/workflows/release-repo2.yml@main
     with:
-      tag: ${{ needs.release-please.release_outputs.repo2--tag_name }}
+      tag: ${{ needs.release-please.repo2_tag }}
