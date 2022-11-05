@@ -3,7 +3,7 @@
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "separate-pull-requests": true,
-  "release-search-depth": 10,
+  "release-search-depth": 100,
   "plugins": ["node-workspace"],
   "packages": {
     "repo1": {
