@@ -8,8 +8,6 @@
   "packages": {
     "repo1": {
     },
-    "repo1/packages/app1": {
-    },
     "repo2": {
     }
   }
