@@ -1,9 +1,9 @@
 {  
-    "packages": {
-      "release-type": "node",
-      "repo1": {
-      },
-      "repo2": {
-      }
+  "release-type": "node",
+  "packages": {
+    "repo1": {
+    },
+    "repo2": {
     }
   }
+}
