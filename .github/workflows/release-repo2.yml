@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: test-repo2
         run: |
-          echo "Test Repo 2"
+          echo "Release Repo 2 Tag: ${{ inputs.tag }}"
