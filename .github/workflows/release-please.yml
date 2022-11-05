@@ -18,16 +18,14 @@ jobs:
           
   repo1-release:
     needs: release-please
-    steps:
-      - uses: mojojoji/monorepo/.github/workflows/release-repo1.yml@main
-        if: ${{ needs.release-please.release_outputs['repo1--release_created'] }}
-        with:
-          tag: ${{ needs.release-please.release_outputs.repo1--tag_name }}
+    if: ${{ needs.release-please.release_outputs['repo1--release_created'] }}
+    uses: mojojoji/monorepo/.github/workflows/release-repo1.yml@main
+    with:
+      tag: ${{ needs.release-please.release_outputs.repo1--tag_name }}
 
   repo2-release:
-    needs: job1
-    steps:
-      - uses: mojojoji/monorepo/.github/workflows/release-repo2.yml@main
-        if: ${{ needs.release-please.release_outputs['repo2--release_created'] }}
-        with:
-          tag: ${{ needs.release-please.release_outputs.repo2--tag_name }}
+    needs: release-please
+    if: ${{ needs.release-please.release_outputs['repo2--release_created'] }}
+    uses: mojojoji/monorepo/.github/workflows/release-repo2.yml@main
+    with:
+      tag: ${{ needs.release-please.release_outputs.repo2--tag_name }}
