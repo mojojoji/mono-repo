@@ -1,12 +1,10 @@
 {  
     "packages": {
       "repo1": {
-        "release-type": "node",
-        "plugins": ["node-workspace"]
+        "release-type": "node"
       },
       "repo2": {
-        "release-type": "node",
-        "plugins": ["node-workspace"]
+        "release-type": "node"
       }
     }
   }
