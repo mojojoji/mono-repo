@@ -4,13 +4,9 @@
   "bump-patch-for-minor-pre-major": true,
   "separate-pull-requests": true,
   "release-search-depth": 100,
+  "plugins": ["node-workspace"],
   "packages": {
-    "repo1": {
-      "plugins": ["node-workspace"],
-      "release-type": "node"
-    },
-    "repo2": {
-      "release-type": "node"
-    }
+    "repo1": {},
+    "repo2": {}
   }
 }
