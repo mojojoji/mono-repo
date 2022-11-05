@@ -28,7 +28,7 @@ jobs:
 
   repo2-release:
     needs: release-please
-    if: ${{ needs.release-please.repo2_release_created }}
+    # if: ${{ needs.release-please.repo2_release_created }}
     uses: mojojoji/mono-repo/.github/workflows/release-repo2.yml@main
     with:
       tag: ${{ needs.release-please.repo2_tag }}
