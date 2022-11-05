@@ -18,6 +18,11 @@ jobs:
           command: manifest
           release-type: node
           package-name: release-please-action
+      - run: |
+          echo "Repo 1 Released: ${{ steps.release.outputs['repo1--release_created'] }}"
+          echo "Repo 1 Tag: ${{ steps.release.outputs['repo1--tag_name'] }}"
+          echo "Repo 2 Released: ${{ steps.release.outputs['repo2--release_created'] }}"
+          echo "Repo 1 Tag: ${{ steps.release.outputs['repo2--tag_name'] }}"
 
   test:
     needs: release-please
