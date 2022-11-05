@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mojojoji/mono-repo/compare/repo2-v1.0.2...repo2-v1.1.0) (2022-11-05)
+
+
+### Features
+
+* test ([5e2bd9c](https://github.com/mojojoji/mono-repo/commit/5e2bd9c70eb7337b83e1442059ee4f63f6fa8dbf))
+
 ## [1.0.2](https://github.com/mojojoji/mono-repo/compare/repo2-v1.0.1...repo2-v1.0.2) (2022-11-05)
 
 
