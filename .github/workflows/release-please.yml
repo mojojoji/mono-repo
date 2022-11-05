@@ -21,6 +21,7 @@ jobs:
 
   test:
     needs: release-please
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Repo 1 Released: ${{ needs.release-please['repo1--release_created'] }}"
