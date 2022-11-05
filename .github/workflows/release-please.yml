@@ -24,26 +24,16 @@ jobs:
           echo "Repo 2 Released: ${{ steps.release.outputs['repo2--release_created'] }}"
           echo "Repo 1 Tag: ${{ steps.release.outputs['repo2--tag_name'] }}"
 
-  test:
-    needs: release_please
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "Repo 1 Released: ${{ needs.release_please.outputs.repo1_release_created }}"
-          echo "Repo 1 Tag: ${{ needs.release_please.outputs.repo1_tag }}"
-          echo "Repo 2 Released: ${{ needs.release_please.outputs.repo2_release_created }}"
-          echo "Repo 1 Tag: ${{ needs.release_please.outputs.repo2_tag }}"
-          
   repo1-release:
     needs: release_please
     if: ${{ needs.release_please.outputs.repo1_release_created }}
-    uses: mojojoji/mono-repo/.github/workflows/release-repo1.yml@main
+    uses: ./.github/workflows/release-repo1.yml@main
     with:
       tag: ${{ needs.release_please.outputs.repo1_tag }}
 
   repo2-release:
     needs: release_please
     if: ${{ needs.release_please.outputs.repo2_release_created }}
-    uses: mojojoji/mono-repo/.github/workflows/release-repo2.yml@main
+    uses: ./.github/workflows/release-repo2.yml@main
     with:
       tag: ${{ needs.release_please.outputs.repo2_tag }}
