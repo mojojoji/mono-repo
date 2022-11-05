@@ -6,20 +6,28 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      release_outputs: ${{ steps.release.outputs }}
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           command: manifest
           release-type: node
           package-name: release-please-action
-
+          
+  repo1-release:
+    needs: release-please
+    steps:
       - uses: mojojoji/monorepo/.github/workflows/release-repo1.yml@main
-        if: ${{ steps.release.outputs['repo1--release_created'] }}
+        if: ${{ needs.release-please.release_outputs['repo1--release_created'] }}
         with:
-          tag: ${{ steps.release.outputs.repo1--tag_name }}
+          tag: ${{ needs.release-please.release_outputs.repo1--tag_name }}
 
-
+  repo2-release:
+    needs: job1
+    steps:
       - uses: mojojoji/monorepo/.github/workflows/release-repo2.yml@main
-        if: ${{ steps.release.outputs['repo2--release_created'] }}
+        if: ${{ needs.release-please.release_outputs['repo2--release_created'] }}
         with:
-          tag: ${{ steps.release.outputs.repo2--tag_name }}
+          tag: ${{ needs.release-please.release_outputs.repo2--tag_name }}
