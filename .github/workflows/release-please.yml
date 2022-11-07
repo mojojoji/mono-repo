@@ -8,5 +8,8 @@ jobs:
   release-repo1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - run: npx lerna version
+        working-directory: ./repo1
+
+    
         
