@@ -1,10 +1,7 @@
 on:
-  workflow_call:
-    inputs:
-      tag:
-        description: 'Tag to release'
-        required: true
-        type: string
+  push:
+    tags:
+      - "*"
 
 name: release-repo1
 jobs:
@@ -13,4 +10,4 @@ jobs:
     steps:
       - name: test-repo1
         run: |
-          echo "Release Repo 1 Tag: ${{ inputs.tag }}"
+          echo "Release Repo 1 Tag: ${{ github.ref_name }}"
