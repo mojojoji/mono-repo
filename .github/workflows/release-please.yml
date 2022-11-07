@@ -24,7 +24,7 @@ jobs:
           node-version: "14"
           registry-url: "https://npm.pkg.github.com/"
 
-      - run: npx lerna version
+      - run: lerna version --create-release github --yes
         working-directory: repo1
 
     
