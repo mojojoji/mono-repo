@@ -24,7 +24,12 @@ jobs:
           node-version: "14"
           registry-url: "https://npm.pkg.github.com/"
 
-      - run: lerna version --create-release github --yes
+      - name: Setup | Configure git user
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - run: lerna version --create-release github --yes --tag-version-prefix "repo1-"
         working-directory: repo1
 
     
