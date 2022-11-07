@@ -9,8 +9,5 @@
     }
   },
   "npmClient": "yarn",
-  "useWorkspaces": true,
-  "packages": [
-    "."
-  ]
+  "useWorkspaces": true
 }
