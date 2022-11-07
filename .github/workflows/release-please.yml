@@ -4,7 +4,7 @@ on:
       - main
 name: release-please
 jobs:
-  release_please:
+  release-please:
     runs-on: ubuntu-latest
     outputs:
       repo1_release_created: ${{ steps.release.outputs['repo1--release_created'] }}
@@ -25,15 +25,15 @@ jobs:
           echo "Repo 1 Tag: ${{ steps.release.outputs['repo2--tag_name'] }}"
 
   repo1-release:
-    needs: release_please
-    if: ${{ needs.release_please.outputs.repo1_release_created }}
+    needs: release-please
+    if: ${{ needs.release-please.outputs.repo1_release_created }}
     uses: ./.github/workflows/release-repo1.yml
     with:
-      tag: ${{ needs.release_please.outputs.repo1_tag }}
+      tag: ${{ needs.release-please.outputs.repo1_tag }}
 
   repo2-release:
-    needs: release_please
-    if: ${{ needs.release_please.outputs.repo2_release_created }}
+    needs: release-please
+    if: ${{ needs.release-please.outputs.repo2_release_created }}
     uses: ./.github/workflows/release-repo2.yml
     with:
-      tag: ${{ needs.release_please.outputs.repo2_tag }}
+      tag: ${{ needs.release-please.outputs.repo2_tag }}
