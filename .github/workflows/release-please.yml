@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: npx lerna version
-        working-directory: ./repo1
+        working-directory: repo1
 
     
         
