@@ -6,7 +6,16 @@
   "release-search-depth": 100,
   "plugins": ["node-workspace"],
   "packages": {
-    "repo1": {},
+    "repo1": {
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "packages/app1/package.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
     "repo2": {}
   }
+  
 }
