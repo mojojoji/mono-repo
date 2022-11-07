@@ -1,5 +1,5 @@
 {
-  "name": "repo2",
+  "name": "app1",
   "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,11 +8,5 @@
   },
   "scripts": {
     "start": "node index.js"
-  },
-  "workspaces": [
-    "packages/app2"
-  ],
-  "devDependencies": {
-    "lerna": "^6.0.1"
   }
 }
