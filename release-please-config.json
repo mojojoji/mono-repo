@@ -1,11 +1,12 @@
 {
-  "release-type": "node",
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "release-search-depth": 100,
-  "plugins": ["node-workspace"],
   "packages": {
-    "repo1": {},
+    "repo1": {
+      "plugins": ["node-workspace"],
+      "release-type": "node"
+    },
     "repo2": {}
   }
   
